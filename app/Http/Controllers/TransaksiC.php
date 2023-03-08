@@ -25,7 +25,7 @@ class TransaksiC extends Controller
             'qty' => 'required',
             'harga_awal' => 'required',
             'harga_jual' => 'required',
-            'lada' => 'required',
+            'laba' => 'required',
         ]);
 
         if ($validator->fails()){
@@ -52,14 +52,14 @@ class TransaksiC extends Controller
 
     public function update(Request $request, TransaksiM $transaksi){
         $validator = Validator::make($request->all(),[
-             'id_barang' => 'required',
+            'id_barang' => 'required',
             'tanggal_jual' => 'required',
             'pembeli' => 'required',
             'nama_barang' => 'required',
             'qty' => 'required',
             'harga_awal' => 'required',
             'harga_jual' => 'required',
-            'lada' => 'required',
+            'laba' => 'required',
         ]);
 
         if ($validator->fails()){
@@ -79,7 +79,7 @@ class TransaksiC extends Controller
         return new TransaksiR(true, 'Data Berhasil Diubah!', $transaksi);
     }
 
-    public function destroy(TransaksiM $barang){
+    public function destroy(TransaksiM $transaksi){
         Storage::delete('public/transaksi/'.$transaksi);
 
         $transaksi->delete();

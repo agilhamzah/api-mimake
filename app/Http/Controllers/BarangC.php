@@ -12,7 +12,7 @@ class BarangC extends Controller
 {
     public function index()
     {
-        $barang = BarangM::latest()->paginate(5);
+        $barang = BarangM::all();
         return new BarangR(true, 'List Data Barang', $barang);
     }
 

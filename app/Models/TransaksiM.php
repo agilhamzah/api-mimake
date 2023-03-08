@@ -18,5 +18,6 @@ class TransaksiM extends Model
         'qty',
         'harga_awal',
         'harga_jual',
+        'laba',
     ];
 }
